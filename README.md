@@ -1,16 +1,96 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🎯 Goal
+Build a reusable tab navigation component in React that allows users to switch between different content panels by clicking on tab headers.
 
-Currently, two official plugins are available:
+You need to implement two components:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<Tabs> — the parent container that manages which tab is active.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<Tab> — the child component that defines a single tab’s title and content.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🧱 Requirements
+The component should support usage in this format:
+
+<Tabs defaultActiveTab="Profile">
+
+  <Tab title="Overview">Overview Content</Tab>
+
+  <Tab title="Profile">Profile Content</Tab>
+
+  <Tab title="Settings">Settings Content</Tab>
+
+</Tabs>
+
+Default Active Tab:
+
+
+The tab specified by defaultActiveTab should be active when the component first renders.
+
+
+Tab Switching:
+
+
+When a user clicks on a tab header, that tab should become active, and its content should display.
+
+
+Only one tab’s content should be visible at a time.
+
+
+Reusability:
+
+
+The <Tabs> component should handle state management and rendering of headers + content.
+
+
+The <Tab> component should define title and content.
+
+
+It should work for any number of <Tab> children.
+
+
+Styling:
+
+
+Use minimal styling to visually highlight the active tab (for example, underline, color, or bold text).
+
+
+No external CSS frameworks are allowed — basic CSS or inline styles are sufficient.
+
+
+💡 Expected Behavior
+When rendered, the component should show tab headers like:
+
+[ Overview ] [ Profile ] [ Settings ]
+
+------------------------------------
+
+Profile Content
+
+
+Clicking on Overview changes the visible content to:
+
+[ Overview ] [ Profile ] [ Settings ]
+
+------------------------------------
+
+Overview Content
+
+
+💯 Bonus (Optional)
+You can earn extra credit for:
+
+Supporting a controlled mode using activeTab and onTabChange props.
+
+
+Adding keyboard navigation (arrow keys to switch tabs).
+
+
+Adding smooth transitions between tab contents.
+
+
+Supporting icons or dynamic tabs (add/remove).
+
+
+Writing basic unit tests for your component.
